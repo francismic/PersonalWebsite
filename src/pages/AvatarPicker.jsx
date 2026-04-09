@@ -30,7 +30,10 @@ function AvatarPicker({ onConfirm, onBack }) {
           type="text"
           placeholder={t.avatar.namePlaceholder}
           value={name}
-          onChange={e => setName(e.target.value)}
+          onChange={e => {
+            const v = e.target.value;
+            setName(v.length ? v[0].toUpperCase() + v.slice(1) : v);
+          }}
           maxLength={16}
         />
         <div className="avatar-picker__actions">
