@@ -30,7 +30,7 @@ function Clock() {
   );
 }
 
-function Desktop({ onLogout, dark, onToggleTheme }) {
+function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
   const { lang, toggle } = useLang();
   const [openWindow, setOpenWindow] = useState(null);
 
@@ -61,6 +61,12 @@ function Desktop({ onLogout, dark, onToggleTheme }) {
         </div>
 
         <div className="taskbar__right">
+          {avatar && (
+            <span className="taskbar__avatar">
+              {avatar}
+              <span className="taskbar__avatar-name">{username}</span>
+            </span>
+          )}
           <button className="taskbar__btn" onClick={toggle}>{lang.toUpperCase()}</button>
           <button className="taskbar__btn" onClick={onToggleTheme}>{dark ? '☀' : '☾'}</button>
           <Clock />
