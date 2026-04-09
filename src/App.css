@@ -129,33 +129,58 @@
   letter-spacing: 0.05em;
 }
 
-.avatar-picker__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+.avatar-picker__carousel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.avatar-picker__item {
-  font-size: 2.5rem;
+.avatar-picker__preview {
+  width: 120px;
+  height: 120px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 rgba(57, 255, 20, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-picker__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.avatar-picker__arrow {
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 8px;
-  padding: 0.75rem;
+  color: var(--text);
+  font-size: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: border-color 0.15s, transform 0.1s, box-shadow 0.15s;
-  line-height: 1;
+  transition: border-color 0.15s, color 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.avatar-picker__item:hover {
+.avatar-picker__arrow:hover {
   border-color: var(--accent);
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 rgba(57, 255, 20, 0.2);
+  color: var(--accent);
+  transform: translate(-1px, -1px);
 }
 
-.avatar-picker__item--selected {
-  border-color: var(--accent);
-  box-shadow: 4px 4px 0 rgba(57, 255, 20, 0.35);
-  transform: translate(-2px, -2px);
+.avatar-picker__counter {
+  font-family: var(--pixel-font);
+  font-size: 0.4rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
 }
 
 .avatar-picker__actions {
@@ -209,8 +234,15 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 1rem;
   line-height: 1;
+}
+
+.taskbar__avatar-img {
+  width: 1.4rem;
+  height: 1.4rem;
+  object-fit: contain;
+  image-rendering: pixelated;
+  border-radius: 3px;
 }
 
 .taskbar__avatar-name {
@@ -253,8 +285,10 @@
 }
 
 .loading-bubble__avatar {
-  font-size: 4rem;
-  line-height: 1;
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  image-rendering: pixelated;
   animation: float 1.5s ease-in-out infinite;
 }
 
@@ -456,7 +490,19 @@
       rgba(255,255,255,0.012) 2px,
       rgba(255,255,255,0.012) 4px
     ),
-    #0d0d12;
+    var(--bg);
+}
+
+[data-theme="light"] .desktop-screen {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.015) 2px,
+      rgba(0,0,0,0.015) 4px
+    ),
+    var(--bg);
 }
 
 .desktop-area {
@@ -493,12 +539,13 @@
 }
 
 .desktop-icon__img  { font-size: 2.75rem; line-height: 1; }
+.desktop-icon__img[src] { width: 2.75rem; height: 2.75rem; object-fit: contain; }
 
 .desktop-icon__label {
-  font-family: var(--pixel-font);
-  font-size: 0.36rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
   color: var(--text);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   text-shadow: 1px 1px 3px var(--bg);
 }
 

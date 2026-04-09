@@ -4,11 +4,14 @@ import Window from '../components/Window';
 import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
+import resumeIcon from '../assets/resume.png';
+import envelopeIcon from '../assets/envelope.png';
+import fileIcon from '../assets/file.png';
 
 const FOLDERS = [
-  { id: 'about',   icon: '📁', label: 'about'    },
-  { id: 'work',    icon: '📁', label: 'projects' },
-  { id: 'contact', icon: '📁', label: 'contact'  },
+  { id: 'about',   icon: resumeIcon, isImg: true },
+  { id: 'work',    icon: fileIcon,    isImg: true },
+  { id: 'contact', icon: envelopeIcon, isImg: true },
 ];
 
 const WINDOWS = {
@@ -31,7 +34,7 @@ function Clock() {
 }
 
 function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
-  const { lang, toggle } = useLang();
+  const { lang, t, toggle } = useLang();
   const [openWindow, setOpenWindow] = useState(null);
 
   return (
@@ -43,8 +46,11 @@ function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
             className="desktop-icon"
             onClick={() => setOpenWindow(f.id)}
           >
-            <span className="desktop-icon__img">{f.icon}</span>
-            <span className="desktop-icon__label">{f.label}</span>
+            {f.isImg
+              ? <img src={f.icon} alt={t.folders[f.id]} className="desktop-icon__img" />
+              : <span className="desktop-icon__img">{f.icon}</span>
+            }
+            <span className="desktop-icon__label">{t.folders[f.id]}</span>
           </button>
         ))}
       </div>
@@ -63,7 +69,7 @@ function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
         <div className="taskbar__right">
           {avatar && (
             <span className="taskbar__avatar">
-              {avatar}
+              <img src={avatar} alt="avatar" className="taskbar__avatar-img" />
               <span className="taskbar__avatar-name">{username}</span>
             </span>
           )}

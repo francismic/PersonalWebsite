@@ -14,6 +14,11 @@ export const translations = {
       label: '> INITIALIZING...',
       subtitle: 'developer. creator. pixel enthusiast.',
     },
+    folders: {
+      about:   'about',
+      work:    'projects',
+      contact: 'contact',
+    },
     about: {
       bio: 'A little about who I am and what I do. I build things for the web and love retro aesthetics, gaming culture, and clean code.',
       stats: [
@@ -49,6 +54,11 @@ export const translations = {
     home: {
       label: '> INITIALISATION...',
       subtitle: 'développeur. créateur. passionné de pixel.',
+    },
+    folders: {
+      about:   'à propos',
+      work:    'projets',
+      contact: 'contact',
     },
     about: {
       bio: "Un peu sur qui je suis et ce que je fais. Je crée des choses pour le web et j'adore les esthétiques rétro, la culture gaming et le code propre.",

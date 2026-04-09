@@ -1,29 +1,30 @@
 import { useState } from 'react';
 import { useLang } from '../context/LangContext';
 
-const AVATARS = ['🧑‍💻', '🧙', '🥷', '🤖', '👾', '🧛', '🦸', '🧝'];
+const avatarModules = import.meta.glob('../assets/avatar/*.png', { eager: true });
+const AVATARS = Object.values(avatarModules).map(m => m.default);
 
 function AvatarPicker({ onConfirm, onBack }) {
   const { t } = useLang();
-  const [selected, setSelected] = useState(null);
+  const [index, setIndex] = useState(0);
   const [name, setName] = useState('');
+
+  const prev = () => setIndex(i => (i - 1 + AVATARS.length) % AVATARS.length);
+  const next = () => setIndex(i => (i + 1) % AVATARS.length);
 
   return (
     <div className="avatar-picker">
       <div className="avatar-picker__box">
         <p className="avatar-picker__label">{t.avatar.label}</p>
         <h2 className="avatar-picker__title">{t.avatar.title}</h2>
-        <div className="avatar-picker__grid">
-          {AVATARS.map(a => (
-            <button
-              key={a}
-              className={`avatar-picker__item ${selected === a ? 'avatar-picker__item--selected' : ''}`}
-              onClick={() => setSelected(a)}
-            >
-              {a}
-            </button>
-          ))}
+        <div className="avatar-picker__carousel">
+          <button className="avatar-picker__arrow" onClick={prev}>◀</button>
+          <div className="avatar-picker__preview">
+            <img src={AVATARS[index]} alt={`Avatar ${index + 1}`} />
+          </div>
+          <button className="avatar-picker__arrow" onClick={next}>▶</button>
         </div>
+        <p className="avatar-picker__counter">{index + 1} / {AVATARS.length}</p>
         <input
           className="avatar-picker__name"
           type="text"
@@ -36,8 +37,8 @@ function AvatarPicker({ onConfirm, onBack }) {
           <button className="avatar-picker__back" onClick={onBack}>{t.avatar.back}</button>
           <button
             className="start-btn"
-            disabled={!selected || !name.trim()}
-            onClick={() => onConfirm(selected, name.trim())}
+            disabled={!name.trim()}
+            onClick={() => onConfirm(AVATARS[index], name.trim())}
           >
             ▶ {t.avatar.confirm}
           </button>

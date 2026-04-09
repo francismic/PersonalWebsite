@@ -13,7 +13,7 @@ function LoadingScreen({ avatar, username, onDone }) {
     <div className="loading-screen">
       <div className="loading-bubble">
         <p className="loading-bubble__welcome">{t.loading.welcome}</p>
-        <span className="loading-bubble__avatar">{avatar}</span>
+        <img src={avatar} alt="avatar" className="loading-bubble__avatar" />
         <p className="loading-bubble__name">{username}</p>
         <div className="loading-bubble__bar">
           <div className="loading-bubble__fill" />
