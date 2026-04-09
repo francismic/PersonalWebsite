@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLang } from '../context/LangContext';
 import Window from '../components/Window';
 import About from './About';
@@ -20,18 +20,6 @@ const WINDOWS = {
   contact: { title: 'contact.exe' },
 };
 
-function Clock() {
-  const [time, setTime] = useState(() => new Date());
-  useEffect(() => {
-    const id = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(id);
-  }, []);
-  return (
-    <span className="taskbar__clock">
-      {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-    </span>
-  );
-}
 
 function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
   const { lang, t, toggle } = useLang();
@@ -56,7 +44,12 @@ function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
       </div>
 
       <div className="taskbar">
-        <button className="taskbar__start" onClick={onLogout} aria-label="Logout">⏻</button>
+        {avatar && (
+          <span className="taskbar__avatar">
+            <img src={avatar} alt="avatar" className="taskbar__avatar-img" />
+            <span className="taskbar__avatar-name">{username}</span>
+          </span>
+        )}
 
         <div className="taskbar__center">
           {openWindow && (
@@ -67,15 +60,9 @@ function Desktop({ onLogout, dark, onToggleTheme, avatar, username }) {
         </div>
 
         <div className="taskbar__right">
-          {avatar && (
-            <span className="taskbar__avatar">
-              <img src={avatar} alt="avatar" className="taskbar__avatar-img" />
-              <span className="taskbar__avatar-name">{username}</span>
-            </span>
-          )}
           <button className="taskbar__btn" onClick={toggle}>{lang.toUpperCase()}</button>
           <button className="taskbar__btn" onClick={onToggleTheme}>{dark ? '☀' : '☾'}</button>
-          <Clock />
+          <button className="taskbar__start" onClick={onLogout} aria-label="Logout">⏻</button>
         </div>
       </div>
 

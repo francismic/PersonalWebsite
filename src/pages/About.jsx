@@ -30,22 +30,7 @@ function About() {
   return (
     <div className="about-layout">
 
-      {/* ── Left: character info + skill tree ── */}
-      <div className="about-rpg">
-        <p className="rpg-title">[ CHARACTER INFO ]</p>
-        <div className="rpg-sheet">
-          <div className="rpg-sheet__row"><span className="rpg-sheet__key">CLASS</span><span className="rpg-sheet__val">Full-Stack Dev</span></div>
-          <div className="rpg-sheet__row"><span className="rpg-sheet__key">GUILD</span><span className="rpg-sheet__val">Web & Design</span></div>
-          <div className="rpg-sheet__row"><span className="rpg-sheet__key">LVL</span><span className="rpg-sheet__val">3</span></div>
-          <div className="rpg-sheet__row"><span className="rpg-sheet__key">STATUS</span><span className="rpg-sheet__val rpg-sheet__val--status">● {t.about.status}</span></div>
-        </div>
-        <p className="rpg-title" style={{ marginTop: '1rem' }}>[ SKILL TREE ]</p>
-        <div className="rpg-stats">
-          {SKILLS.map(s => <StatBar key={s.name} {...s} />)}
-        </div>
-      </div>
-
-      {/* ── Right: avatar + bio ── */}
+      {/* ── Avatar ── */}
       <div className="about-avatar-col">
         <p className="about-avatar__name">FRANCIS</p>
         <div className="about-avatar__frame">
@@ -53,7 +38,26 @@ function About() {
             <span>?</span>
           </div>
         </div>
-        <p className="rpg-bio">{t.about.bio}</p>
+        <p className="rpg-bio about-bio--desktop">{t.about.bio}</p>
+      </div>
+
+      {/* ── Character info ── */}
+      <div className="about-char-info">
+        <p className="rpg-title">[ CHARACTER INFO ]</p>
+        <div className="rpg-sheet">
+          <div className="rpg-sheet__row"><span className="rpg-sheet__key">CLASS</span><span className="rpg-sheet__val">Full-Stack Dev</span></div>
+          <div className="rpg-sheet__row"><span className="rpg-sheet__key">GUILD</span><span className="rpg-sheet__val">Web & Design</span></div>
+          <div className="rpg-sheet__row"><span className="rpg-sheet__key">LVL</span><span className="rpg-sheet__val">3</span></div>
+          <div className="rpg-sheet__row"><span className="rpg-sheet__key">STATUS</span><span className="rpg-sheet__val rpg-sheet__val--status">● {t.about.status}</span></div>
+        </div>
+      </div>
+
+      {/* ── Skill tree ── */}
+      <div className="about-skill-tree">
+        <p className="rpg-title">[ SKILL TREE ]</p>
+        <div className="rpg-stats">
+          {SKILLS.map(s => <StatBar key={s.name} {...s} />)}
+        </div>
       </div>
 
     </div>
