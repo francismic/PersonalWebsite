@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root,
+[data-theme="dark"] {
+  --bg: #0a0a0f;
+  --surface: #13131f;
+  --border: #2a2a40;
+  --accent: #39ff14;
+  --accent2: #00d4ff;
+  --pink: #ff4fa3;
+  --text: #e8e8f0;
+  --muted: #6c6c8a;
+  --grid-color: rgba(57, 255, 20, 0.03);
+  --pixel-font: 'Press Start 2P', monospace;
+  --mono: 'Space Mono', monospace;
+}
+
+[data-theme="light"] {
+  --bg: #f2ede4;
+  --surface: #e8e2d4;
+  --border: #c4b89a;
+  --accent: #2d8000;
+  --accent2: #006699;
+  --pink: #cc0066;
+  --text: #1a1205;
+  --muted: #6a5a40;
+  --grid-color: rgba(0, 80, 0, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--mono);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  image-rendering: pixelated;
+}
+
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); image-rendering: pixelated; }
