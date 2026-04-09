@@ -26,9 +26,7 @@ export const translations = {
     portfolio: {
       heading: '// WORK',
       projects: [
-        { type: 'WEB APP',    title: 'PROJECT 01', desc: 'A short description of what this project does and the tech used.' },
-        { type: 'PIXEL ART',  title: 'PROJECT 02', desc: 'A short description of what this project does and the tech used.' },
-        { type: 'GAME',       title: 'PROJECT 03', desc: 'A short description of what this project does and the tech used.' },
+        { type: 'WEB APP', title: 'PERSONAL WEBSITE', desc: 'My personal portfolio built with React & Vite. Retro OS-inspired UI with pixel aesthetics.', link: 'https://github.com/francismic/PersonalWebsite' },
       ],
     },
     contact: {
@@ -37,6 +35,8 @@ export const translations = {
       message: 'Want to work together or just say hi? My inbox is always open.',
       email: 'SEND MAIL',
       github: 'GITHUB',
+      instagram: 'INSTAGRAM',
+      linkedin: 'LINKEDIN',
     },
   },
 
@@ -67,9 +67,7 @@ export const translations = {
     portfolio: {
       heading: '// TRAVAUX',
       projects: [
-        { type: 'APP WEB',    title: 'PROJET 01', desc: 'Une courte description du projet et des technologies utilisées.' },
-        { type: 'PIXEL ART',  title: 'PROJET 02', desc: 'Une courte description du projet et des technologies utilisées.' },
-        { type: 'JEU',        title: 'PROJET 03', desc: 'Une courte description du projet et des technologies utilisées.' },
+        { type: 'APP WEB', title: 'SITE PERSONNEL', desc: 'Mon portfolio personnel fait avec React & Vite. Interface inspirée des OS rétro avec une esthétique pixel.', link: 'https://github.com/francismic/PersonalWebsite' },
       ],
     },
     contact: {
@@ -78,6 +76,8 @@ export const translations = {
       message: "Envie de collaborer ou juste dire bonjour ? Ma boîte mail est toujours ouverte.",
       email: 'ENVOYER',
       github: 'GITHUB',
+      instagram: 'INSTAGRAM',
+      linkedin: 'LINKEDIN',
     },
   },
 };

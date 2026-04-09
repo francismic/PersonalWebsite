@@ -469,9 +469,10 @@
 
 .card__title {
   font-family: var(--pixel-font);
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   color: var(--text);
   line-height: 1.8;
+  letter-spacing: 0.12em;
   margin-bottom: 0.6rem;
 }
 
@@ -487,15 +488,28 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 1.8rem;
+  transition: color 0.15s, transform 0.1s;
+}
+.contact__social:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ─── Buttons ─── */
 .btn {
   display: inline-block;
-  font-family: var(--pixel-font);
-  font-size: 0.42rem;
-  letter-spacing: 0.1em;
-  padding: 0.75rem 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   cursor: pointer;
   border: none;
