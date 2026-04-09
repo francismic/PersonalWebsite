@@ -20,14 +20,8 @@ export const translations = {
       contact: 'contact',
     },
     about: {
-      bio: 'A little about who I am and what I do. I build things for the web and love retro aesthetics, gaming culture, and clean code.',
-      stats: [
-        { value: 'DEV',    label: 'Full-stack'  },
-        { value: 'DESIGN', label: 'Pixel & UI'  },
-        { value: 'GAMES',  label: 'Retro lover' },
-        { value: 'CODE',   label: 'Open source' },
-      ],
-      tags: ['REACT', 'JS', 'CSS', 'NODE', 'PIXEL ART', 'GAMING'],
+      status: 'Available for hire',
+      bio: 'A full-stack adventurer wielding clean code and pixel-sharp design. Quests completed: slaying bugs, crafting UIs, and shipping products that actually work.',
     },
     portfolio: {
       projects: [
@@ -61,14 +55,8 @@ export const translations = {
       contact: 'contact',
     },
     about: {
-      bio: "Un peu sur qui je suis et ce que je fais. Je crée des choses pour le web et j'adore les esthétiques rétro, la culture gaming et le code propre.",
-      stats: [
-        { value: 'DEV',      label: 'Full-stack'  },
-        { value: 'DESIGN',   label: 'Pixel & UI'  },
-        { value: 'JEUX',     label: 'Rétro lover' },
-        { value: 'CODE',     label: 'Open source' },
-      ],
-      tags: ['REACT', 'JS', 'CSS', 'NODE', 'PIXEL ART', 'GAMING'],
+      status: 'Disponible',
+      bio: "Aventurier full-stack armé d'un code propre et d'un design pixel parfait. Quêtes accomplies : chasser les bugs, forger des interfaces et livrer des projets qui tiennent la route.",
     },
     portfolio: {
       projects: [

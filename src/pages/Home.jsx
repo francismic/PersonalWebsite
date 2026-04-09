@@ -6,7 +6,7 @@ function Home({ onStart, dark, onToggleTheme }) {
   return (
     <div className="boot-screen">
       <div className="boot-screen__corner">
-        <button className="nav__btn" onClick={toggle}>{lang === 'en' ? 'FR' : 'EN'}</button>
+        <button className="nav__btn" onClick={toggle}>{lang.toUpperCase()}</button>
         <button className="nav__btn" onClick={onToggleTheme}>{dark ? '☀' : '☾'}</button>
       </div>
 
