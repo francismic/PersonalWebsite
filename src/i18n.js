@@ -1,14 +1,7 @@
 export const translations = {
   en: {
     loading: {
-      welcome: 'WELCOME',
-    },
-    avatar: {
-      label: '> CHOOSE YOUR CHARACTER',
-      title: 'WHO ARE YOU?',
-      namePlaceholder: 'Enter your name...',
-      confirm: 'CONFIRM',
-      back: 'BACK',
+      welcome: "WELCOME TO FRANCIS'S PC",
     },
     home: {
       label: '> INITIALIZING...',
@@ -18,6 +11,7 @@ export const translations = {
       about:   'about',
       work:    'projects',
       contact: 'contact',
+      cv:      'cv.pdf',
     },
     about: {
       status: 'Available for hire',
@@ -31,19 +25,19 @@ export const translations = {
     contact: {
       message: 'Want to work together or just say hi? My inbox is always open.',
       email: 'SEND MAIL',
+      cv: 'DOWNLOAD CV',
+    },
+    logout: {
+      title: 'shutdown.exe',
+      message: 'Are you sure you want to leave?',
+      confirm: 'YES',
+      cancel: 'NO',
     },
   },
 
   fr: {
     loading: {
-      welcome: 'BIENVENUE',
-    },
-    avatar: {
-      label: '> CHOISISSEZ VOTRE PERSONNAGE',
-      title: 'QUI ÊTES-VOUS?',
-      namePlaceholder: 'Entrez votre nom...',
-      confirm: 'CONFIRMER',
-      back: 'RETOUR',
+      welcome: 'BIENVENUE SUR LE PC DE FRANCIS',
     },
     home: {
       label: '> INITIALISATION...',
@@ -53,6 +47,7 @@ export const translations = {
       about:   'à propos',
       work:    'projets',
       contact: 'contact',
+      cv:      'cv.pdf',
     },
     about: {
       status: 'Disponible',
@@ -66,6 +61,13 @@ export const translations = {
     contact: {
       message: "Envie de collaborer ou juste dire bonjour ? Ma boîte mail est toujours ouverte.",
       email: 'ENVOYER',
+      cv: 'TÉLÉCHARGER CV',
+    },
+    logout: {
+      title: 'shutdown.exe',
+      message: 'Êtes-vous sûr de vouloir quitter ?',
+      confirm: 'OUI',
+      cancel: 'NON',
     },
   },
 };

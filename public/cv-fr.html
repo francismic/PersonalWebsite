@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francis Michaud — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #1a1a2e;
+      --accent-light: #16213e;
+      --highlight: #0f3460;
+      --teal: #00b4d8;
+      --text-dark: #1a1a2e;
+      --text-mid: #444;
+      --text-light: #777;
+      --border: #e0e0e0;
+      --bg: #ffffff;
+      --sidebar-bg: #1a1a2e;
+      --sidebar-text: #e8e8f0;
+      --sidebar-muted: #a0a0b8;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f0f0;
+      color: var(--text-dark);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 36px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .sidebar-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    .sidebar-title {
+      font-size: 10px;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .sidebar-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--teal);
+      margin-top: 8px;
+    }
+
+    .sidebar-section-title {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 9px;
+      font-size: 11px;
+      color: var(--sidebar-text);
+    }
+
+    .contact-item .icon {
+      color: var(--teal);
+      font-size: 11px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      width: 14px;
+    }
+
+    .contact-item a {
+      color: var(--sidebar-text);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-item a:hover {
+      color: var(--teal);
+    }
+
+    .skill-item {
+      margin-bottom: 10px;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--sidebar-text);
+      margin-bottom: 4px;
+    }
+
+    .skill-bar {
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      background: rgba(0, 180, 216, 0.15);
+      color: var(--teal);
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .lang-item {
+      margin-bottom: 10px;
+    }
+
+    .lang-label {
+      font-size: 11px;
+      color: var(--sidebar-text);
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .lang-level {
+      font-size: 10px;
+      color: var(--sidebar-muted);
+    }
+
+    .lang-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .lang-dot.filled {
+      background: var(--teal);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .main-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 16px;
+    }
+
+    .main-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .main-subtitle {
+      font-size: 12px;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .summary {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .exp-item {
+      margin-bottom: 18px;
+      padding-left: 14px;
+      border-left: 2px solid var(--teal);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2px;
+    }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-dark);
+    }
+
+    .exp-date {
+      font-size: 10px;
+      color: var(--text-light);
+      font-family: 'Space Mono', monospace;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+
+    .exp-company {
+      font-size: 11px;
+      color: var(--teal);
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-bullets li {
+      font-size: 11.5px;
+      color: var(--text-mid);
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 10px;
+    }
+
+    .edu-item {
+      margin-bottom: 14px;
+      padding-left: 14px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text-dark);
+    }
+
+    .edu-school {
+      font-size: 11px;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+
+    .edu-date {
+      font-size: 10px;
+      color: var(--text-light);
+      font-family: 'Space Mono', monospace;
+      margin-top: 2px;
+    }
+
+    .project-item {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      border-left: 3px solid var(--teal);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .project-name {
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text-dark);
+    }
+
+    .project-link {
+      font-size: 10px;
+      color: var(--teal);
+      text-decoration: none;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .project-desc {
+      font-size: 11.5px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .project-tag {
+      background: #f0f4f8;
+      color: var(--highlight);
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    @media print {
+      body {
+        background: white;
+        font-size: 12px;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-name">Francis<br/>Michaud</div>
+        <div class="sidebar-title">Développeur Full-Stack<br/>& Designer Graphique</div>
+        <div class="sidebar-divider"></div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="sidebar-section-title">Contact</div>
+
+        <div class="contact-item">
+          <span class="icon">✉</span>
+          <a href="mailto:fr.michaud93@gmail.com">fr.michaud93@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">⌖</span>
+          <span>Montréal, Canada</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">in</span>
+          <a href="https://www.linkedin.com/in/francis-michaud/" target="_blank">linkedin.com/in/francis-michaud</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">⌥</span>
+          <a href="https://github.com/francismic" target="_blank">github.com/francismic</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">⬡</span>
+          <a href="https://www.behance.net/frmichaud" target="_blank">behance.net/frmichaud</a>
+        </div>
+      </div>
+
+      <!-- Tech Skills -->
+      <div>
+        <div class="sidebar-section-title">Développement</div>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>JavaScript</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>React</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>CSS / HTML</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Node.js</span><span>65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>PHP</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>MySQL</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+        </div>
+      </div>
+
+      <!-- Design Skills -->
+      <div>
+        <div class="sidebar-section-title">Design</div>
+        <div class="tag-list">
+          <span class="tag">Photoshop</span>
+          <span class="tag">Illustrator</span>
+          <span class="tag">InDesign</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Git</span>
+          <span class="tag">Vite</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div>
+        <div class="sidebar-section-title">Langues</div>
+
+        <div class="lang-item">
+          <div class="lang-label">
+            <span>Français</span>
+            <span class="lang-level">Natif</span>
+          </div>
+          <div class="lang-dots">
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+          </div>
+        </div>
+
+        <div class="lang-item">
+          <div class="lang-label">
+            <span>Anglais</span>
+            <span class="lang-level">Courant</span>
+          </div>
+          <div class="lang-dots">
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+            <div class="lang-dot"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <!-- Header -->
+      <div class="main-header">
+        <div class="main-name">Francis Michaud</div>
+        <div class="main-subtitle">Développeur Full-Stack & Designer Graphique</div>
+        <p class="summary">
+          Développeur full-stack et designer graphique basé à Montréal, avec une double formation en développement web et en communication visuelle. À l'aise sur toute la chaîne — de la conception d'interfaces React réactives jusqu'à la logique serveur en Node.js et PHP. Apporte un sens du design affûté à chaque projet, avec une maîtrise concrète de la suite Adobe Creative. Bilingue (FR/EN), rigoureux et toujours à la recherche du prochain défi.
+        </p>
+      </div>
+
+      <!-- Experience -->
+      <div>
+        <div class="section-title">Expérience Professionnelle</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Serveur</div>
+            <div class="exp-date">Sept 2025 — Mars 2026</div>
+          </div>
+          <div class="exp-company">Jatoba — Montréal, QC</div>
+          <ul class="exp-bullets">
+            <li>Offert un service de qualité dans un environnement gastronomique haut de gamme et dynamique</li>
+            <li>Collaboré avec les équipes de cuisine et de salle pour garantir une expérience client irréprochable</li>
+            <li>Géré un service à volume élevé avec rigueur et sang-froid sous pression</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Serveur</div>
+            <div class="exp-date">2017 — Présent</div>
+          </div>
+          <div class="exp-company">Soubois — Montréal, QC</div>
+          <ul class="exp-bullets">
+            <li>Assuré un service attentif et personnalisé dans un restaurant à forte fréquentation</li>
+            <li>Développé de solides compétences en communication et en résolution de problèmes au quotidien</li>
+            <li>Formé et encadré de nouveaux membres d'équipe lors de leur intégration</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <div class="section-title">Formation</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">AEC — Conception et programmation de sites web</div>
+          <div class="edu-school">Collège de Maisonneuve — Montréal, QC</div>
+          <div class="edu-date">Diplômé 2023</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">DEP — Infographie</div>
+          <div class="edu-school">Centre de Formation Professionnelle de Verdun — Montréal, QC</div>
+          <div class="edu-date">Diplômé 2019</div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div>
+        <div class="section-title">Projets</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Site Portfolio Personnel</div>
+            <a class="project-link" href="https://github.com/francismic/PersonalWebsite" target="_blank">github.com/francismic/PersonalWebsite</a>
+          </div>
+          <div class="project-desc">
+            Portfolio interactif développé avec React & Vite, inspiré des interfaces OS rétro. Inclut un système de fenêtres personnalisé, thèmes clair/sombre, support bilingue (FR/EN) et une esthétique pixel art.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Vite</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">i18n</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Projets de Design Graphique (DEP)</div>
+            <a class="project-link" href="https://www.behance.net/frmichaud" target="_blank">behance.net/frmichaud</a>
+          </div>
+          <div class="project-desc">
+            Collection de travaux visuels réalisés durant la formation en infographie — incluant des projets d'impression, de mise en page et d'identité visuelle avec Adobe Photoshop, Illustrator et InDesign.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Photoshop</span>
+            <span class="project-tag">Illustrator</span>
+            <span class="project-tag">InDesign</span>
+            <span class="project-tag">Design imprimé</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>

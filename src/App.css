@@ -96,161 +96,6 @@
   50%       { box-shadow: 5px 5px 0 rgba(57, 255, 20, 0.55); }
 }
 
-/* ─── Avatar Picker ─── */
-.avatar-picker {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.avatar-picker__box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.avatar-picker__label {
-  font-family: var(--pixel-font);
-  font-size: 0.45rem;
-  color: var(--accent);
-  letter-spacing: 0.25em;
-}
-
-.avatar-picker__title {
-  font-family: var(--pixel-font);
-  font-size: clamp(1rem, 4vw, 2rem);
-  color: var(--text);
-  letter-spacing: 0.05em;
-}
-
-.avatar-picker__carousel {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.avatar-picker__preview {
-  width: 120px;
-  height: 120px;
-  background: var(--surface);
-  border: 2px solid var(--accent);
-  border-radius: 12px;
-  box-shadow: 4px 4px 0 rgba(57, 255, 20, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.avatar-picker__preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
-.avatar-picker__arrow {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  color: var(--text);
-  font-size: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, transform 0.1s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar-picker__arrow:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translate(-1px, -1px);
-}
-
-.avatar-picker__counter {
-  font-family: var(--pixel-font);
-  font-size: 0.4rem;
-  color: var(--muted);
-  letter-spacing: 0.15em;
-}
-
-.avatar-picker__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.avatar-picker__back {
-  background: none;
-  border: 1px solid var(--border);
-  font-family: var(--pixel-font);
-  font-size: 0.45rem;
-  letter-spacing: 0.1em;
-  color: var(--text);
-  padding: 1rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
-}
-.avatar-picker__back:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-.avatar-picker__name {
-  width: 100%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 1rem;
-  padding: 0.6rem 0.9rem;
-  outline: none;
-  text-align: center;
-  transition: border-color 0.15s;
-}
-.avatar-picker__name:focus { border-color: var(--accent); }
-.avatar-picker__name::placeholder { color: var(--muted); }
-
-.start-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  transform: none !important;
-  box-shadow: 5px 5px 0 rgba(57, 255, 20, 0.1) !important;
-  animation: none !important;
-}
-
-/* ─── Taskbar avatar ─── */
-.taskbar__avatar {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  line-height: 1;
-}
-
-.taskbar__avatar-img {
-  width: 1.4rem;
-  height: 1.4rem;
-  object-fit: contain;
-  image-rendering: pixelated;
-  border-radius: 3px;
-}
-
-.taskbar__avatar-name {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-}
 
 /* ─── Loading Screen ─── */
 .loading-screen {
@@ -284,25 +129,6 @@
   letter-spacing: 0.3em;
 }
 
-.loading-bubble__avatar {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  image-rendering: pixelated;
-  animation: float 1.5s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
-}
-
-.loading-bubble__name {
-  font-family: var(--pixel-font);
-  font-size: 0.65rem;
-  color: var(--text);
-  letter-spacing: 0.12em;
-}
 
 .loading-bubble__bar {
   width: 180px;
@@ -392,89 +218,6 @@
   flex: 1;
 }
 
-/* ─── Login ─── */
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem 2rem;
-  gap: 0.75rem;
-}
-
-.login__avatar {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 0.25rem;
-  image-rendering: pixelated;
-}
-
-.login__name {
-  font-family: var(--pixel-font);
-  font-size: 0.65rem;
-  color: var(--text);
-  letter-spacing: 0.08em;
-}
-
-.login__hint {
-  font-family: var(--mono);
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-.login__form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  width: 100%;
-  max-width: 260px;
-}
-
-.login__input {
-  width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 1.1rem;
-  padding: 0.6rem 0.9rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-.login__input:focus { border-color: var(--accent); }
-.login__input--error { border-color: #ff5f57; }
-
-.login__error {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: #ff5f57;
-  align-self: flex-start;
-  margin-top: -0.25rem;
-}
-
-.login__submit {
-  width: 100%;
-  font-family: var(--mono);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--bg);
-  background: var(--accent);
-  border: none;
-  border-radius: 6px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  box-shadow: 3px 3px 0 rgba(57, 255, 20, 0.25);
-  transition: transform 0.1s, box-shadow 0.1s, opacity 0.1s;
-}
-.login__submit:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 rgba(57, 255, 20, 0.3);
-}
-.login__submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
 /* ─── Desktop screen ─── */
 .desktop-screen {
@@ -634,7 +377,6 @@
 .about-avatar-col  { grid-column: 2; grid-row: 1 / 3; }
 .about-char-info   { grid-column: 1; grid-row: 1; }
 .about-skill-tree  { grid-column: 1; grid-row: 2; }
-
 .rpg-title {
   font-family: var(--pixel-font);
   font-size: 0.5rem;
@@ -849,6 +591,90 @@
 .btn--primary:hover {
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 rgba(57, 255, 20, 0.3);
+}
+.btn--secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: 3px 3px 0 rgba(57, 255, 20, 0.15);
+}
+.btn--secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(57, 255, 20, 0.2);
+}
+
+/* ─── Logout dialog ─── */
+.logout-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.logout-dialog {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  width: 300px;
+  box-shadow: 6px 6px 0 var(--accent);
+  overflow: hidden;
+}
+
+.logout-dialog__titlebar {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 8px 12px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-dialog__close {
+  background: none;
+  border: none;
+  color: var(--bg);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+}
+
+.logout-dialog__close:hover {
+  opacity: 1;
+}
+
+.logout-dialog__body {
+  padding: 24px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logout-dialog__icon {
+  font-size: 28px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.logout-dialog__message {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+.logout-dialog__actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px 20px;
+  justify-content: flex-end;
 }
 
 /* ─── Cursor blink ─── */
