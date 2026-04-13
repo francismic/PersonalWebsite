@@ -1,7 +1,21 @@
+import { useState, useEffect } from 'react';
 import { useLang } from '../context/LangContext';
 
 function Home({ onStart, dark, onToggleTheme }) {
   const { lang, toggle, t } = useLang();
+  const [displayed, setDisplayed] = useState('');
+
+  useEffect(() => {
+    setDisplayed('');
+    const full = t.home.subtitle;
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(full.slice(0, i));
+      if (i >= full.length) clearInterval(interval);
+    }, 60);
+    return () => clearInterval(interval);
+  }, [t.home.subtitle]);
 
   return (
     <div className="boot-screen">
@@ -14,7 +28,7 @@ function Home({ onStart, dark, onToggleTheme }) {
         <p className="hero__label">{t.home.label}</p>
         <h1 className="hero__name">FRANCIS</h1>
         <p className="hero__title">
-          {t.home.subtitle}<span className="cursor-blink">_</span>
+          {displayed}<span className="cursor-blink">_</span>
         </p>
         <button className="start-btn" onClick={onStart}>
           ▶ START

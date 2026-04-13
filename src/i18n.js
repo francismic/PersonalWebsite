@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     loading: {
-      welcome: "WELCOME TO FRANCIS'S PC",
+      welcome: '> BOOTING...',
     },
     home: {
       label: '> INITIALIZING...',
@@ -37,7 +37,7 @@ export const translations = {
 
   fr: {
     loading: {
-      welcome: 'BIENVENUE SUR LE PC DE FRANCIS',
+      welcome: '> DÉMARRAGE...',
     },
     home: {
       label: '> INITIALISATION...',
