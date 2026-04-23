@@ -236,18 +236,23 @@
   gap: 6px;
 }
 
-/* macOS-style traffic light dots */
-.window__ctrl {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+.window__ctrl--close {
+  background: #c0392b;
+  border: 1px solid #922b21;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: opacity 0.1s;
+  padding: 0;
+  line-height: 1;
+  transition: background 0.1s;
 }
-.window__ctrl:hover  { opacity: 0.75; }
-.window__ctrl--close { background: #ff5f57; }
+.window__ctrl--close:hover { background: #e74c3c; }
 
 .window__title {
   font-family: var(--pixel-font);
@@ -582,6 +587,22 @@
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.5;
+}
+
+/* ─── Contact terminal ─── */
+.contact__terminal {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+
+.contact__terminal-line {
+  color: var(--muted);
+}
+
+.contact__terminal-line--done {
+  color: var(--accent);
 }
 
 /* ─── Contact ─── */
