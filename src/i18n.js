@@ -1,7 +1,9 @@
 export const translations = {
   en: {
     loading: {
-      welcome: '> BOOTING...',
+      dialing:    '> Dialing...',
+      connecting: '> Logging on to network...',
+      connected:  '> Connected!',
     },
     home: {
       label: '> INITIALIZING...',
@@ -37,7 +39,9 @@ export const translations = {
 
   fr: {
     loading: {
-      welcome: '> DÉMARRAGE...',
+      dialing:    '> Connexion en cours...',
+      connecting: '> Connexion au réseau...',
+      connected:  '> Connecté!',
     },
     home: {
       label: '> INITIALISATION...',

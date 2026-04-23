@@ -12,7 +12,7 @@ import cvIcon from '../assets/cv.png';
 const FOLDERS = [
   { id: 'about',   icon: resumeIcon,   isImg: true },
   { id: 'work',    icon: fileIcon,     isImg: true },
-  { id: 'cv',      icon: cvIcon,       isImg: true, href: { en: '/cv.html', fr: '/cv-fr.html' } },
+  { id: 'cv',      icon: cvIcon,       isImg: true, href: { en: '/CV_michaud.pdf', fr: '/CV_michaud.pdf' } },
   { id: 'contact', icon: envelopeIcon, isImg: true },
 ];
 

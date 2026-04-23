@@ -98,7 +98,7 @@
 
 
 /* ─── Loading Screen ─── */
-.loading-screen {
+.dialup-screen {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -110,44 +110,88 @@
   background-size: 40px 40px;
 }
 
-.loading-bubble {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.dialup-box {
+  width: 340px;
   background: var(--surface);
-  border: 2px solid var(--border);
-  border-radius: 16px;
-  padding: 2.5rem 3rem;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
-}
-
-.loading-bubble__welcome {
-  font-family: var(--pixel-font);
-  font-size: 0.45rem;
-  color: var(--accent);
-  letter-spacing: 0.3em;
-}
-
-
-.loading-bubble__bar {
-  width: 180px;
-  height: 6px;
-  background: var(--border);
-  border-radius: 3px;
+  border: 2px solid var(--accent);
+  box-shadow: 6px 6px 0 var(--accent);
   overflow: hidden;
 }
 
-.loading-bubble__fill {
-  height: 100%;
+.dialup-box__titlebar {
   background: var(--accent);
-  border-radius: 3px;
-  animation: load-bar 2.2s ease-in-out forwards;
+  color: var(--bg);
+  font-family: var(--pixel-font);
+  font-size: 0.4rem;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.05em;
 }
 
-@keyframes load-bar {
-  0%   { width: 0%; }
-  100% { width: 100%; }
+.dialup-box__dots {
+  font-size: 0.35rem;
+  opacity: 0.6;
+}
+
+.dialup-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 24px 20px 12px;
+}
+
+.dialup-visual__planet,
+.dialup-visual__pc {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.dialup-visual__line {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dialup-visual__signal {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transition: none;
+}
+
+.dialup-visual__signal--active {
+  animation: signal-travel 0.6s ease-in-out infinite;
+}
+
+@keyframes signal-travel {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+.dialup-log {
+  padding: 4px 16px 12px;
+  min-height: 64px;
+}
+
+.dialup-log__line {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  transition: color 0.4s ease;
+  margin-bottom: 4px;
+}
+
+.dialup-log__line--done {
+  color: var(--accent);
 }
 
 /* ─── Window overlay ─── */
@@ -486,20 +530,12 @@
   image-rendering: pixelated;
 }
 
-.about-avatar__placeholder {
+.about-avatar__photo {
   width: 128px;
   height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg);
-  border: 1px dashed var(--border);
-}
-
-.about-avatar__placeholder span {
-  font-family: var(--pixel-font);
-  font-size: 1.5rem;
-  color: var(--muted);
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 

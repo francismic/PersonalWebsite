@@ -1,12 +1,12 @@
 import { useLang } from '../context/LangContext';
+import francisImg from '../assets/francis.jpg';
 
 const SKILLS = [
-  { name: 'JavaScript',   level: 80 },
-  { name: 'React',        level: 80 },
-  { name: 'CSS',          level: 75 },
+  { name: 'JS / React', level: 60 },
+  { name: 'HTML / CSS',   level: 90 },
   { name: 'PHP',          level: 60 },
-  { name: 'Photoshop',    level: 70 },
-  { name: 'Illustrator',  level: 65 },
+  { name: 'Photoshop',    level: 85 },
+  { name: 'Illustrator',  level: 90 },
 ];
 
 function StatBar({ name, level }) {
@@ -34,9 +34,7 @@ function About() {
       <div className="about-avatar-col">
         <p className="about-avatar__name">FRANCIS</p>
         <div className="about-avatar__frame">
-          <div className="about-avatar__placeholder">
-            <span>?</span>
-          </div>
+          <img src={francisImg} alt="Francis" className="about-avatar__photo" />
         </div>
         <p className="rpg-bio about-bio--desktop">{t.about.bio}</p>
       </div>
@@ -47,7 +45,6 @@ function About() {
         <div className="rpg-sheet">
           <div className="rpg-sheet__row"><span className="rpg-sheet__key">CLASS</span><span className="rpg-sheet__val">Full-Stack Dev</span></div>
           <div className="rpg-sheet__row"><span className="rpg-sheet__key">GUILD</span><span className="rpg-sheet__val">Web & Design</span></div>
-          <div className="rpg-sheet__row"><span className="rpg-sheet__key">LVL</span><span className="rpg-sheet__val">3</span></div>
           <div className="rpg-sheet__row"><span className="rpg-sheet__key">STATUS</span><span className="rpg-sheet__val rpg-sheet__val--status">● {t.about.status}</span></div>
         </div>
       </div>
